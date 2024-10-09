@@ -4,13 +4,13 @@ import { Button } from '../ui/button'
 
 
 type FileUpLoaderProps = {
-    fileChange: (FILES: File[]) => void;
+    fieldChange: (FILES: File[]) => void;
     mediaUrl: string;
 }
 
 const FileUpLoader = ({ fieldChange, mediaUrl }: FileUpLoaderProps) => {
     const [file, setFile] = useState<File[]>([]);
-    const [fileUrl, setFileUrl] = useState('');
+    const [fileUrl, setFileUrl] = useState(mediaUrl);
 
     const onDrop = useCallback(
         (acceptedFiles: FileWithPath[]) => {
